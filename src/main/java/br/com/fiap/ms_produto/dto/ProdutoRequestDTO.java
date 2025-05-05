@@ -1,9 +1,12 @@
 package br.com.fiap.ms_produto.dto;
 
+import br.com.fiap.ms_produto.entities.Loja;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
+
+import java.util.Set;
 
 public record ProdutoRequestDTO(
         @NotBlank(message = "Campo requerido!")
@@ -19,7 +22,11 @@ public record ProdutoRequestDTO(
         Double valor,
 
         @NotNull(message = "Campo requerido")
-        CategoriaDTO categoria)
+        CategoriaDTO categoria,
+
+        @NotNull(message = "Campo requerido")
+                Set<LojaDTO> lojas)
+
 {
 
 }
